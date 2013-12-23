@@ -7,5 +7,39 @@ Fiorenzo Pizza <fiorenzo.pizza@gmail.com>
 This example show a simple application, with 2 modules
 The wildfly 8 doesn't follow the welcome-file-list rules on jar
 The application is multi module with:
+
 * one jar module;
-* one war module.
+* one war module (wich depends on one jar module).
+
+
+The welcome-file-list rules, declared on web.xml:
+
+....
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
+....
+
+== Structure of war module
+
+....
+-- ROOT.war
+-----------index.jsp (redirect on index.jsf)
+-----------index.xhtml
+----------/second
+-----------------index.jsp (redirect on second.jsf)
+-----------------second.xhtml
+----------/WEB-INF
+----------------/classes
+------------------------/META-INF
+--------------------------------/third
+--------------------------------------index.jsp (redirect on third.jsf)
+--------------------------------------third.xhtml
+----------------/lib
+---------------------first.jar
+....
