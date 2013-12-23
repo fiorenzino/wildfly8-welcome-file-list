@@ -29,17 +29,17 @@ The welcome-file-list rules, declared on web.xml:
 
 ....
 -- ROOT.war
------------index.jsp (redirect on index.jsf)
+-----------index.jsp (redirect on index.jsf ==> IT WORKS!)
 -----------index.xhtml
 ----------/second
------------------index.jsp (redirect on second.jsf)
+-----------------index.jsp (redirect on second.jsf ==> IT WORKS!)
 -----------------second.xhtml
 ----------/WEB-INF
 ----------------/classes
 ------------------------/META-INF
 --------------------------------/third
---------------------------------------index.jsp (redirect on third.jsf)
+--------------------------------------index.jsp (redirect on third.jsf  ==> IT DOESN'T WORKS!)
 --------------------------------------third.xhtml
 ----------------/lib
----------------------first.jar
+---------------------first.jar ( => IT DOESN'T WORKS!)
 ....
