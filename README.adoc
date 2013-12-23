@@ -1,9 +1,11 @@
-Simple app to show welcome-file-list defect on wildfly 8
-Fiorenzo Pizza
+= Simple app to show welcome-file-list defect on wildfly 8
+Fiorenzo Pizza <fiorenzo.pizza@gmail.com>
 
-This example show a simple application, with 2 modules:
-- one jar module;
-- one war module.
+This example show a simple application, with 2 modules
 
-== Problem
+== Problem: welcome-file-list
 
+The wildfly 8 doesn't follow the welcome-file-list rules on jar
+The application is multi module with:
+* one jar module;
+* one war module.
